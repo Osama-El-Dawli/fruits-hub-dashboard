@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:fruits_hub_dashboard/core/widgets/custom_button.dart';
 import 'package:fruits_hub_dashboard/core/widgets/custom_text_form_field.dart';
+import 'package:fruits_hub_dashboard/features/add_products/domain/entities/add_product_input_entity.dart';
 import 'package:fruits_hub_dashboard/features/add_products/presentation/widgets/image_field.dart';
 import 'package:fruits_hub_dashboard/features/add_products/presentation/widgets/is_featured_product.dart';
 
@@ -82,6 +83,14 @@ class _AddProductsViewBodyState extends State<AddProductsViewBody> {
                   if (image != null) {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
+                      AddProductInputEntity input = AddProductInputEntity(
+                        name: name,
+                        code: code,
+                        description: description,
+                        price: price,
+                        isFeatured: isFeatured,
+                        image: image!,
+                      );
                     } else {
                       setState(() {
                         autovalidateMode = AutovalidateMode.always;
