@@ -5,15 +5,25 @@ class AddProductInputEntity {
   final num price;
   final bool isFeatured;
   final File image;
-  final String? imageUrl;
+  String? imageUrl;
+  final int expirationInMonths;
+  final int numberOfCallories;
+  final int unitAmount;
+  final bool isOrganic;
+  final num avgRating = 0;
+  final num ratingCount = 0;
 
   new({
     required this.name,
     required this.code,
     required this.description,
     required this.price,
-    required this.isFeatured,
+    this.isFeatured = false,
     required this.image,
+    required this.expirationInMonths,
+    required this.numberOfCallories,
+    required this.unitAmount,
+    this.isOrganic = false,
     this.imageUrl,
   });
 }

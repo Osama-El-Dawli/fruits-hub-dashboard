@@ -1,5 +1,4 @@
-abstract class BackEndEndPoints {
-  static const String addUserData = 'users';
-  static const String getUserData = 'users';
-  static const String isUserExists = 'users';
+abstract class BackendEndPoints {
+  static const images = 'image';
+  static const addProductsCollection = 'products';
 }
