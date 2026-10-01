@@ -7,9 +7,14 @@ import 'package:fruits_hub_dashboard/core/services/get_it.dart';
 import 'package:fruits_hub_dashboard/core/utils/app_colors.dart';
 import 'package:fruits_hub_dashboard/features/dashboard/presentation/views/dashboard_view.dart';
 import 'package:fruits_hub_dashboard/firebase_options.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: 'https://bvzdxbywiiywfaaeitvf.supabase.co',
+    publishableKey: 'sb_publishable_dHYbyqyvtJXRbZQgmbeJ4g_mLqUtO6d',
+  );
   Bloc.observer = CustomBlocObserver();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setupGetIt();

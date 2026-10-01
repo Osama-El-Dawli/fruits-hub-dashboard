@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -19,7 +20,8 @@ class ImagesRepoImpl implements ImagesRepo {
       );
       return Right(url);
     } catch (e) {
-      return Left(ServerFailure('Failed to upload image'));
+      log(e.toString());
+      return Left(ServerFailure('Failed to Upload File'));
     }
   }
 }
