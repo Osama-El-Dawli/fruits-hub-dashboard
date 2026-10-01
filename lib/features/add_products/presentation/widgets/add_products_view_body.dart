@@ -120,6 +120,7 @@ class _AddProductsViewBodyState extends State<AddProductsViewBody> {
                       AddProductInputEntity input = AddProductInputEntity(
                         name: name,
                         code: code,
+                        reviews: [],
                         description: description,
                         price: price,
                         isFeatured: isFeatured,
